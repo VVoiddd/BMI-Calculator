@@ -1,4 +1,14 @@
-// Function to calculate BMI
+document.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme');
+    setTheme(savedTheme === 'dark');
+
+    document.getElementById('theme-toggle').addEventListener('change', () => {
+        const isDarkMode = document.getElementById('theme-toggle').checked;
+        setTheme(isDarkMode);
+        localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+    });
+});
+
 function calculateBMI() {
     let height = document.getElementById('height').value;
     let weight = document.getElementById('weight').value;
@@ -65,28 +75,18 @@ function calculateBMI() {
     bmiResult.innerHTML = message;
 }
 
-// Function to set theme
 function setTheme(isDarkMode) {
     const body = document.body;
     const themeToggle = document.getElementById('theme-toggle');
     if (isDarkMode) {
         body.classList.add('dark-theme');
+        body.classList.remove('fade-in-light');
+        body.classList.add('fade-in-dark');
         themeToggle.checked = true;
     } else {
         body.classList.remove('dark-theme');
+        body.classList.remove('fade-in-dark');
+        body.classList.add('fade-in-light');
         themeToggle.checked = false;
     }
 }
-
-// Load saved theme from localStorage and apply it
-document.addEventListener('DOMContentLoaded', () => {
-    const savedTheme = localStorage.getItem('theme');
-    setTheme(savedTheme === 'dark');
-
-    // Save the theme when the toggle is clicked
-    document.getElementById('theme-toggle').addEventListener('change', () => {
-        const isDarkMode = document.getElementById('theme-toggle').checked;
-        setTheme(isDarkMode);
-        localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-    });
-});
