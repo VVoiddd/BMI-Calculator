@@ -8,6 +8,7 @@ body {
     height: 100vh;
     margin: 0;
     background: linear-gradient(to right, #6dd5ed, #2193b0);
+    color: #333;
     transition: background 0.5s, color 0.5s;
 }
 
@@ -129,12 +130,12 @@ h1 {
     transition: transform 0.3s, color 0.3s;
 }
 
-.gender-option input:checked+label i {
+.gender-option input:checked + label i {
     transform: scale(1.2);
     color: #2193b0;
 }
 
-.gender-option input:checked+label {
+.gender-option input:checked + label {
     color: #2193b0;
     border-color: #2193b0;
 }
@@ -266,11 +267,11 @@ header {
     border-radius: 50%;
 }
 
-input:checked+.slider {
+input:checked + .slider {
     background-color: white;
 }
 
-input:checked+.slider:before {
+input:checked + .slider:before {
     transform: translateX(26px);
 }
 
@@ -328,7 +329,7 @@ body.dark-theme {
     border-color: #444;
 }
 
-.dark-theme .gender-option input:checked+label {
+.dark-theme .gender-option input:checked + label {
     color: #1e8bb5;
     border-color: #1e8bb5;
 }
@@ -350,11 +351,11 @@ body.dark-theme {
     color: #fff;
 }
 
-.dark-theme input:checked+.slider {
+.dark-theme input:checked + .slider {
     background-color: #fff;
 }
 
-.dark-theme input:checked+.slider:before {
+.dark-theme input:checked + .slider:before {
     background-color: #1e8bb5;
 }
 
