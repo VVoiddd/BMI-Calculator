@@ -8,6 +8,7 @@ body {
 	height: 100vh;
 	margin: 0;
 	background: linear-gradient(to right, #6dd5ed, #2193b0);
+	transition: background 0.5s, color 0.5s;
 }
 
 .container {
@@ -25,6 +26,7 @@ body {
 	text-align: center;
 	max-width: 400px;
 	width: 100%;
+	transition: background 0.5s, color 0.5s, box-shadow 0.5s;
 }
 
 h1 {
@@ -33,6 +35,7 @@ h1 {
 	margin-bottom: 20px;
 	color: #333;
 	font-weight: 700;
+	transition: color 0.5s;
 }
 
 .input-group {
@@ -48,6 +51,7 @@ h1 {
 	color: #666;
 	font-size: 1em;
 	font-weight: 500;
+	transition: color 0.5s;
 }
 
 .input-group input,
@@ -58,7 +62,7 @@ h1 {
 	border: 2px solid #ddd;
 	border-radius: 5px;
 	font-size: 1em;
-	transition: border-color 0.3s;
+	transition: border-color 0.3s, background 0.5s, color 0.5s;
 }
 
 .input-group input:focus,
@@ -87,6 +91,7 @@ h1 {
 	font-weight: 500;
 	color: #666;
 	margin-bottom: 10px;
+	transition: color 0.5s;
 }
 
 .gender-options {
@@ -111,7 +116,7 @@ h1 {
 	font-size: 1em;
 	color: #666;
 	font-weight: 500;
-	transition: color 0.3s;
+	transition: color 0.3s, border-color 0.3s, background 0.5s;
 	padding: 10px;
 	border: 2px solid #ddd;
 	border-radius: 5px;
@@ -161,6 +166,7 @@ button:hover {
 	border-radius: 20px;
 	overflow: hidden;
 	border: 2px solid #ddd;
+	transition: background-color 0.5s, border-color 0.5s;
 }
 
 .scale-section {
@@ -181,6 +187,7 @@ button:hover {
 	width: 100%;
 	text-align: center;
 	color: #333;
+	transition: color 0.5s;
 }
 
 .underweight {
@@ -209,6 +216,7 @@ button:hover {
 	font-size: 1.5em;
 	color: #333;
 	font-weight: 700;
+	transition: color 0.5s;
 }
 
 header {
@@ -280,12 +288,14 @@ footer a {
 	display: inline-block;
 	font-size: 20px;
 	color: var(--footer-color);
+	transition: color 0.5s;
 }
 
 /* Dark theme styles */
 body.dark-theme {
     background: linear-gradient(to right, #1e1e1e, #333333);
     color: #fff;
+    transition: background 0.5s, color 0.5s;
 }
 
 .dark-theme .box {
