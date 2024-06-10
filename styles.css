@@ -7,7 +7,9 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    background: linear-gradient(to right, #6dd5ed, #2193b0);
     color: #333;
+    transition: color 0.5s;
 }
 
 body.fade-in-light {
@@ -44,18 +46,23 @@ body.fade-in-dark {
 }
 
 .box {
+    background: #fff;
     padding: 40px;
     border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
     max-width: 400px;
     width: 100%;
+    transition: background 0.5s, color 0.5s, box-shadow 0.5s;
 }
 
 h1 {
     font-size: 2em;
     margin-top: -10px;
     margin-bottom: 20px;
+    color: #333;
     font-weight: 700;
+    transition: color 0.5s;
 }
 
 .input-group {
@@ -64,10 +71,14 @@ h1 {
 }
 
 .input-group label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 5px;
     color: #666;
     font-size: 1em;
     font-weight: 500;
+    transition: color 0.5s;
 }
 
 .input-group input,
@@ -78,6 +89,7 @@ h1 {
     border: 2px solid #ddd;
     border-radius: 5px;
     font-size: 1em;
+    transition: border-color 0.3s, background 0.5s, color 0.5s;
 }
 
 .input-group input:focus,
@@ -100,10 +112,13 @@ h1 {
 }
 
 .gender-group label {
-    color: #666;
+    display: block;
+    text-align: center;
     font-size: 1em;
     font-weight: 500;
+    color: #666;
     margin-bottom: 10px;
+    transition: color 0.5s;
 }
 
 .gender-options {
@@ -128,6 +143,7 @@ h1 {
     font-size: 1em;
     color: #666;
     font-weight: 500;
+    transition: color 0.3s, border-color 0.3s, background 0.5s;
     padding: 10px;
     border: 2px solid #ddd;
     border-radius: 5px;
@@ -137,9 +153,11 @@ h1 {
 .gender-option label i {
     font-size: 2.5em;
     margin-bottom: 5px;
+    transition: transform 0.3s, color 0.3s;
 }
 
 .gender-option input:checked + label i {
+    transform: scale(1.2);
     color: #2193b0;
 }
 
@@ -156,11 +174,13 @@ button {
     font-size: 1em;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
     font-weight: 500;
 }
 
 button:hover {
     background-color: #1e8bb5;
+    transform: translateY(-2px);
 }
 
 .bmi-scale {
@@ -173,6 +193,7 @@ button:hover {
     border-radius: 20px;
     overflow: hidden;
     border: 2px solid #ddd;
+    transition: background-color 0.5s, border-color 0.5s;
 }
 
 .scale-section {
@@ -183,6 +204,7 @@ button:hover {
     color: white;
     font-weight: bold;
     position: relative;
+    transition: background-color 0.3s;
 }
 
 .scale-section span {
@@ -192,6 +214,7 @@ button:hover {
     width: 100%;
     text-align: center;
     color: #333;
+    transition: color 0.5s;
 }
 
 .underweight {
@@ -212,6 +235,7 @@ button:hover {
     bottom: -5px;
     width: 5px;
     background-color: black;
+    transition: left 0.3s;
 }
 
 .bmi-result {
@@ -219,6 +243,7 @@ button:hover {
     font-size: 1.5em;
     color: #333;
     font-weight: 700;
+    transition: color 0.5s;
 }
 
 header {
@@ -290,4 +315,63 @@ footer a {
     display: inline-block;
     font-size: 20px;
     color: var(--footer-color);
+    transition: color 0.5s;
+}
+
+/* Dark theme styles */
+body.dark-theme {
+    color: #fff;
+}
+
+.dark-theme .box {
+    background: #222;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.dark-theme h1 {
+    color: #ccc;
+}
+
+.dark-theme .input-group label {
+    color: #ccc;
+}
+
+.dark-theme .input-group input,
+.dark-theme .input-group select {
+    background: #333;
+    color: #fff;
+    border-color: #444;
+}
+
+.dark-theme .input-group input:focus,
+.dark-theme .input-group select:focus {
+    border-color: #1e8bb5;
+}
+
+.dark-theme .gender-option label {
+    color: #ccc;
+    border-color: #444;
+}
+
+.dark-theme .gender-option input:checked + label {
+    color: #1e8bb5;
+    border-color: #1e8bb5;
+}
+
+.dark-theme .bmi-scale {
+    background-color: #333;
+    border-color: #444;
+}
+
+.dark-theme .scale-section span {
+    color: #ccc;
+}
+
+.dark-theme #bmi-indicator {
+    background-color: #1e8bb5;
+}
+
+.dark-theme .bmi-result {
+    color: #ccc;
 }

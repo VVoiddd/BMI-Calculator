@@ -61,7 +61,7 @@ function calculateBMI() {
         } else {
             message += "<br>Consider losing weight.";
         }
-    } else if (gender ===  'female') {
+    } else if (gender === 'female') {
         if (bmi < 17.1) {
             message += "<br>Consider gaining weight.";
         } else if (bmi < 23.2) {
@@ -71,21 +71,22 @@ function calculateBMI() {
         }
     }
 
-    // Display BMI advice
+    // Display the message
     bmiResult.innerHTML = message;
 }
 
 function setTheme(isDarkMode) {
     const body = document.body;
-    const header = document.querySelector('header');
-    const footer = document.querySelector('footer');
-    const themeClass = isDarkMode ? 'fade-in-dark' : 'fade-in-light';
-    const otherThemeClass = isDarkMode ? 'fade-in-light' : 'fade-in-dark';
-
-    body.classList.add(themeClass);
-    body.classList.remove(otherThemeClass);
-    header.classList.add(themeClass);
-    header.classList.remove(otherThemeClass);
-    footer.classList.add(themeClass);
-    footer.classList.remove(otherThemeClass);
+    const themeToggle = document.getElementById('theme-toggle');
+    if (isDarkMode) {
+        body.classList.add('dark-theme');
+        body.classList.remove('fade-in-light');
+        body.classList.add('fade-in-dark');
+        themeToggle.checked = true;
+    } else {
+        body.classList.remove('dark-theme');
+        body.classList.remove('fade-in-dark');
+        body.classList.add('fade-in-light');
+        themeToggle.checked = false;
+    }
 }
