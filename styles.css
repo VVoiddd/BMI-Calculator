@@ -9,7 +9,33 @@ body {
     margin: 0;
     background: linear-gradient(to right, #6dd5ed, #2193b0);
     color: #333;
-    transition: background 0.5s, color 0.5s;
+    transition: color 0.5s;
+}
+
+body.fade-in-light {
+    animation: fade-in-light 0.5s forwards;
+}
+
+body.fade-in-dark {
+    animation: fade-in-dark 0.5s forwards;
+}
+
+@keyframes fade-in-light {
+    from {
+        background: linear-gradient(to right, #1e1e1e, #333333);
+    }
+    to {
+        background: linear-gradient(to right, #6dd5ed, #2193b0);
+    }
+}
+
+@keyframes fade-in-dark {
+    from {
+        background: linear-gradient(to right, #6dd5ed, #2193b0);
+    }
+    to {
+        background: linear-gradient(to right, #1e1e1e, #333333);
+    }
 }
 
 .container {
@@ -294,7 +320,6 @@ footer a {
 
 /* Dark theme styles */
 body.dark-theme {
-    background: linear-gradient(to right, #1e1e1e, #333333);
     color: #fff;
 }
 
@@ -344,21 +369,9 @@ body.dark-theme {
 }
 
 .dark-theme #bmi-indicator {
-    background-color: #fff;
-}
-
-.dark-theme .bmi-result {
-    color: #fff;
-}
-
-.dark-theme input:checked + .slider {
-    background-color: #fff;
-}
-
-.dark-theme input:checked + .slider:before {
     background-color: #1e8bb5;
 }
 
-.dark-theme footer a {
+.dark-theme .bmi-result {
     color: #ccc;
 }
