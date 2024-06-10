@@ -1,9 +1,7 @@
 // Function to calculate BMI
 function calculateBMI() {
-    // Get input values
-    const age = document.getElementById('age').value;
-    let height = parseFloat(document.getElementById('height').value);
-    let weight = parseFloat(document.getElementById('weight').value);
+    let height = document.getElementById('height').value;
+    let weight = document.getElementById('weight').value;
     const heightUnit = document.getElementById('height-unit').value;
     const weightUnit = document.getElementById('weight-unit').value;
     const gender = document.querySelector('input[name="gender"]:checked').value;
@@ -81,12 +79,14 @@ function setTheme(isDarkMode) {
 }
 
 // Load saved theme from localStorage and apply it
-const savedTheme = localStorage.getItem('theme');
-setTheme(savedTheme === 'dark');
+document.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme');
+    setTheme(savedTheme === 'dark');
 
-// Save the theme when the toggle is clicked
-document.getElementById('theme-toggle').addEventListener('change', () => {
-    const isDarkMode = document.getElementById('theme-toggle').checked;
-    setTheme(isDarkMode);
-    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+    // Save the theme when the toggle is clicked
+    document.getElementById('theme-toggle').addEventListener('change', () => {
+        const isDarkMode = document.getElementById('theme-toggle').checked;
+        setTheme(isDarkMode);
+        localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+    });
 });
